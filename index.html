@@ -340,7 +340,7 @@ img {
 
 <script>
 function unlock() {
-  "301123") {
+  if (document.getElementById("pass").value === "301123") {
     document.getElementById("lock").style.display = "none";
   } else {
     alert("Try again");
