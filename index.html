@@ -8,9 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; }
 
 body {
+  margin: 0;
   font-family: Inter, sans-serif;
   background: #0b0b0b;
   color: #f5f5f5;
@@ -29,7 +30,6 @@ section {
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
-  margin-bottom: 16px;
 }
 
 p {
@@ -38,32 +38,32 @@ p {
   line-height: 1.7;
 }
 
-img {
-  max-width: 280px;
-  margin-top: 24px;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 button {
   margin-top: 20px;
-  padding: 12px 28px;
+  padding: 12px 30px;
   border-radius: 50px;
   border: 1px solid white;
   background: transparent;
   color: white;
   font-size: 1rem;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img {
+  max-width: 280px;
+  margin-top: 24px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 .progress {
@@ -78,146 +78,18 @@ button {
 </style>
 </head>
 
-<body>
+<body onload="init()">
 
 <div class="progress" id="progress"></div>
 
 <section>
-  <div class="fade show">
+  <div id="intro" class="show">
     <p>Hey.</p><br>
     <p>This is for you.</p><br>
-    <button id="startBtn">Start</button>
+    <button onclick="start()">Start</button>
   </div>
 </section>
 
-<section class="fade">
-  <h1>You & Me<br>2025</h1>
-  <p>
-    Started together.<br>
-    Learned distance.<br>
-    Stayed us.
-  </p>
-</section>
+<section class="fade"><h1>You & Me<br>2025</h1></section>
 
-<section class="fade">
-  <p>
-    Before August,<br>
-    every day felt extra special.<br><br>
-    Not because we tried.<br>
-    But because it was with you.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    Sitting in a bakery in Manali.<br>
-    No rush. No noise.<br>
-    Just us and time slowing down.
-  </p>
-  <img src="photos/14.jpg">
-</section>
-
-<section class="fade">
-  <p>
-    Watching Shinchan Movie together.<br>
-    Laughing at stupid scenes.<br><br>
-    Somehow, that meant everything.
-  </p>
-  <img src="photos/4.jpg">
-</section>
-
-<section class="fade">
-  <p>
-    Together since: <b>30.11.2023</b><br>
-    Cities apart: <b>Delhi ⇄ Baddi</b><br>
-    Video calls: <b>Few, but priceless</b><br>
-    Laughs during calls: <b>Too many to hide</b><br>
-    Fights in 2025: <b>Yes</b><br>
-    Giving up on us: <b>Zero</b>
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    In August, distance entered.<br><br>
-    Not between us.<br><br>
-    But between our days.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    Video calls where I talked<br>
-    and you replied on text.<br><br>
-    You laughing silently<br>
-    so your parents wouldn’t hear.<br><br>
-    Me trying harder<br>
-    just to see you smile.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    Before August,<br>
-    my gallery was full.<br><br>
-    Random photos.<br>
-    Random bakchodi.<br><br>
-    After August,<br>
-    it was mostly empty.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    December 21.<br>
-    Two days.<br>
-    Hectic. Tiring. Perfect.<br><br>
-    Even without nights together,<br>
-    it still felt like home.
-  </p>
-  <img src="photos/3.jpg">
-</section>
-
-<section class="fade">
-  <p>
-    Distance taught me this:<br><br>
-    Love isn’t access.<br>
-    Love is effort.<br><br>
-    Showing up differently<br>
-    still counts as showing up.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    Thank you for trusting in us.<br><br>
-    For staying playful.<br>
-    For staying kind.<br><br>
-    For staying mine.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    New year.<br>
-    Same us.<br><br>
-    New memories waiting.
-  </p>
-</section>
-
-<section class="fade">
-  <p>
-    I’d rewind it all.<br><br>
-    And still choose you.
-  </p>
-</section>
-
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const audio = document.getElementById("music");
-const startBtn = document.getElementById("startBtn");
-
-startBtn.addEventListener("click
+<sec
