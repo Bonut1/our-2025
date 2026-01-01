@@ -92,16 +92,17 @@ img {
   <div class="fade show">
     <p>Hey.</p>
     <p>This is for you.</p>
-    <p>Let's rewing 2025.</p>
     <button onclick="startExperience()">Start</button>
   </div>
 </section>
 
 <section class="fade">
   <h1>You & Me<br>2025</h1>
-   <p>Started together.</p>
-    <p>Learned distance.</p>
-    <p>Stayed us.</p>
+  <p>
+    Started together.<br>
+    Learned distance.<br>
+    Stayed us.
+  </p>
 </section>
 
 <section class="fade">
@@ -119,7 +120,7 @@ img {
     No rush. No noise.<br>
     Just us and time slowing down.
   </p>
-  <img src="photos/1.jpg">
+  <img src="photos/1.jpg" alt="Bakery in Manali">
 </section>
 
 <section class="fade">
@@ -128,13 +129,15 @@ img {
     Laughing at stupid scenes.<br><br>
     Somehow, that meant everything.
   </p>
-  <img src="photos/2.jpg">
+  <img src="photos/2.jpg" alt="Shinchan movie day">
 </section>
 
 <section class="fade">
   <p>
     Together since: <b>30.11.2023</b><br>
     Cities apart: <b>Delhi ⇄ Baddi</b><br>
+    Video calls: <b>Few, but priceless</b><br>
+    Laughs during calls: <b>Too many to hide</b><br>
     Fights in 2025: <b>Yes</b><br>
     Giving up on us: <b>Zero</b>
   </p>
@@ -143,15 +146,15 @@ img {
 <section class="fade">
   <p>
     In August, distance entered.<br><br>
-    Not between us.<br>
+    Not between us.<br><br>
     But between our days.
   </p>
 </section>
 
 <section class="fade">
   <p>
-    Video calls, where I talked.<br>
-    and replied on text.<br><br>
+    Video calls where I talked<br>
+    and you replied on text.<br><br>
     You laughing silently<br>
     so your parents wouldn’t hear.<br><br>
     Me trying harder<br>
@@ -161,8 +164,34 @@ img {
 
 <section class="fade">
   <p>
-    Before August, my gallery was full.<br><br>
-    After August, it was mostly empty.
+    Before August,<br>
+    my gallery was full.<br><br>
+    Random photos.<br>
+    Random bakchodi.<br><br>
+    After August,<br>
+    it was mostly empty.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    We had one fight.<br><br>
+    Grief on my side.<br>
+    Missing on yours.<br><br>
+    Miscommunication happened.<br><br>
+    But the next day,<br>
+    we chose to understand.<br><br>
+    And we grew.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    We didn’t complain.<br><br>
+    We respected each other’s careers.<br><br>
+    We stayed proud of each other.<br><br>
+    Distance didn’t weaken us.<br>
+    It taught us patience.
   </p>
 </section>
 
@@ -170,54 +199,65 @@ img {
   <p>
     December 21.<br>
     Two days.<br>
-    Hectic. Tiring. Perfect.
+    Hectic. Tiring. Perfect.<br><br>
+    Even without nights together,<br>
+    it still felt like home.
+  </p>
+  <img src="photos/3.jpg" alt="December reunion">
+</section>
+
+<section class="fade">
+  <p>
+    Distance taught me this:<br><br>
+    Love isn’t access.<br>
+    Love is effort.<br><br>
+    Showing up differently<br>
+    still counts as showing up.
   </p>
 </section>
 
 <section class="fade">
-  <button onclick="showLetter()">Read something</button>
-  <div class="letter" id="letter">
-    <p>
-      Thank you for staying soft.<br>
-      Staying playful.<br>
-      Staying us.<br><br>
-      I’d rewind it all.<br>
-      And still choose you.
-    </p>
-  </div>
+  <p>
+    Thank you for trusting in us.<br><br>
+    For managing family, exams, life<br>
+    without letting us turn sour.<br><br>
+    For staying playful.<br>
+    For staying kind.<br><br>
+    For staying mine.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    When you’re back in Delhi:<br><br>
+    Sandoz.<br>
+    Every food outlet we missed.<br>
+    Galaxy Pizza at night.<br><br>
+    Movies.<br>
+    Scary Moviesss.<br>
+    Gaming together.<br><br>
+    And no goodbyes this time.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    New year.<br>
+    Same us.<br><br>
+    New memories waiting.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    I’d rewind it all.<br><br>
+    And still choose you.
+  </p>
 </section>
 
 <audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
-<script>
-function startExperience() {
-  const audio = document.getElementById("music");
-  audio.volume = 0.25;
-  audio.play();
-  window.scrollBy(0, window.innerHeight);
-}
-
-function showLetter() {
-  document.getElementById("letter").style.display = "block";
-}
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
-  });
-});
-
-document.querySelectorAll(".fade").forEach(el => observer.observe(el));
-
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const height = document.body.scrollHeight - window.innerHeight;
-  document.getElementById("progress").style.width =
-    (scrollTop / height) * 100 + "%";
-});
-</script>
 
 </body>
 </html>
