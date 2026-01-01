@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You & Me — 2025</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+}
+
+p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: white;
+  width: 0%;
+  z-index: 100;
+}
+
+img {
+  max-width: 280px;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+
+.letter {
+  max-width: 600px;
+  background: #111;
+  padding: 30px;
+  border-radius: 14px;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<section>
+  <div class="fade show">
+    <p>Hey.</p>
+    <p>This is for you.</p>
+    <button onclick="startExperience()">Start</button>
+  </div>
+</section>
+
+<section class="fade">
+  <h1>You & Me<br>2025</h1>
+</section>
+
+<section class="fade">
+  <p>
+    Before August,<br>
+    every day felt extra special.<br><br>
+    Not because we tried.<br>
+    But because it was you.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    Sitting in a bakery in Manali.<br>
+    No rush. No noise.<br>
+    Just us and time slowing down.
+  </p>
+  <img src="photos/1.jpg">
+</section>
+
+<section class="fade">
+  <p>
+    Watching Shinchan together.<br>
+    Laughing at stupid scenes.<br><br>
+    Somehow, that meant everything.
+  </p>
+  <img src="photos/2.jpg">
+</section>
+
+<section class="fade">
+  <p>
+    Together since: <b>30.11.2023</b><br>
+    Cities apart: <b>Delhi ⇄ Baddi</b><br>
+    Fights in 2025: <b>One</b><br>
+    Giving up on us: <b>Zero</b>
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    In August, distance entered.<br><br>
+    Not between us.<br>
+    But between our days.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    Video calls where I talked.<br>
+    You replied on text.<br><br>
+    Laughing silently so no one would hear.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    Before August, my gallery was full.<br><br>
+    After August, it was mostly empty.
+  </p>
+</section>
+
+<section class="fade">
+  <p>
+    December 21.<br>
+    Two days.<br>
+    Hectic. Tiring. Perfect.
+  </p>
+</section>
+
+<section class="fade">
+  <button onclick="showLetter()">Read something</button>
+  <div class="letter" id="letter">
+    <p>
+      Thank you for staying soft.<br>
+      Staying playful.<br>
+      Staying us.<br><br>
+      I’d rewind it all.<br>
+      And still choose you.
+    </p>
+  </div>
+</section>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startExperience() {
+  const audio = document.getElementById("music");
+  audio.volume = 0.25;
+  audio.play();
+  window.scrollBy(0, window.innerHeight);
+}
+
+function showLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  document.getElementById("progress").style.width =
+    (scrollTop / height) * 100 + "%";
+});
+</script>
+
+</body>
+</html>
 
