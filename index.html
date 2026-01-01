@@ -253,4 +253,126 @@ img {
     Distance didn’t weaken us.<br>
     It taught us patience.
   </p>
-</section
+</section>
+
+<!-- SLIDE 12 -->
+<section class="fade">
+  <p>
+    December 21.<br>
+    Two days.<br>
+    Hectic. Tiring. Perfect.<br><br>
+    Even without nights together,<br>
+    it still felt like home.
+  </p>
+  <img src="photos/3.jpg">
+</section>
+
+<!-- SLIDE 13 -->
+<section class="fade">
+  <p>
+    Distance taught me this:<br><br>
+    Love isn’t access.<br>
+    Love is effort.<br><br>
+    Showing up differently<br>
+    still counts as showing up.
+  </p>
+</section>
+
+<!-- SLIDE 14 -->
+<section class="fade">
+  <p>
+    Thank you for trusting in us.<br><br>
+    For managing family, exams, life<br>
+    without letting us turn sour.<br><br>
+    For staying playful.<br>
+    For staying kind.<br><br>
+    For staying mine.
+  </p>
+</section>
+
+<!-- SLIDE 15 -->
+<section class="fade">
+  <p>
+    When you’re back in Delhi:<br><br>
+    Sandoz.<br>
+    Every food outlet we missed.<br>
+    Galaxy Pizza at night.<br><br>
+    Movies.<br>
+    Scary Moviesss.<br>
+    Gaming together.<br><br>
+    And no goodbyes this time.
+  </p>
+</section>
+
+<!-- SLIDE 16 -->
+<section class="fade">
+  <p>
+    New year.<br>
+    Same us.<br><br>
+    New memories waiting.
+  </p>
+</section>
+
+<!-- SLIDE 17 -->
+<section class="fade">
+  <p>
+    I’d rewind it all.<br><br>
+    And still choose you.
+  </p>
+</section>
+
+<!-- LETTER REVEAL -->
+<section class="fade">
+  <button onclick="revealLetter()">One more thing</button>
+  <div id="letter">
+    <p>
+      I made all of this because<br>
+      you matter to me more than words.<br><br>
+      I’d rewind it all.<br>
+      And still choose you.
+    </p>
+  </div>
+</section>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function unlock() {
+  if (document.getElementById("pass").value === "301123") {
+    document.getElementById("lock").style.display = "none";
+  } else {
+    alert("Try again");
+  }
+}
+
+function start() {
+  const music = document.getElementById("music");
+  music.volume = 0.25;
+  music.play();
+  window.scrollBy(0, window.innerHeight);
+}
+
+function revealLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  document.getElementById("progress").style.width =
+    (scrollTop / height) * 100 + "%";
+});
+</script>
+
+</body>
+</html>
