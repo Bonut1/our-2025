@@ -120,7 +120,7 @@ img {
     No rush. No noise.<br>
     Just us and time slowing down.
   </p>
-  <img src="photos/1.jpg" alt="Bakery in Manali">
+  <img src="photos/14.jpg" alt="Bakery in Manali">
 </section>
 
 <section class="fade">
@@ -129,7 +129,7 @@ img {
     Laughing at stupid scenes.<br><br>
     Somehow, that meant everything.
   </p>
-  <img src="photos/2.jpg" alt="Shinchan movie day">
+  <img src="photos/4.jpg" alt="Shinchan movie together">
 </section>
 
 <section class="fade">
@@ -258,6 +258,31 @@ img {
 <audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
+<script>
+function startExperience() {
+  const audio = document.getElementById("music");
+  audio.volume = 0.25;
+  audio.play();
+  window.scrollBy(0, window.innerHeight);
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  document.getElementById("progress").style.width =
+    (scrollTop / height) * 100 + "%";
+});
+</script>
 
 </body>
 </html>
