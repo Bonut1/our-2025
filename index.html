@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>You & Me — 2025</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -20,76 +18,263 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 40px 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 40px 20px;
 }
 
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
+  margin-bottom: 12px;
 }
 
 p {
   max-width: 620px;
   font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 30px;
-  border-radius: 50px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .fade {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 1s ease;
+  transform: translateY(30px);
+  transition: all 1s ease;
 }
 
-.show {
+.fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+button {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin-top: 20px;
 }
 
 img {
   max-width: 280px;
   margin-top: 24px;
-  border-radius: 16px;
+  border-radius: 14px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-
-.progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 0%;
-  background: white;
-  z-index: 100;
 }
 </style>
 </head>
 
-<body onload="init()">
+<body>
 
-<div class="progress" id="progress"></div>
-
-<section>
-  <div id="intro" class="show">
-    <p>Hey.</p><br>
-    <p>This is for you.</p><br>
+<!-- SLIDE 1 — ENTRY -->
+<section id="start">
+  <div class="fade show">
+    <p>Hey.</p>
+    <p>This is for you.</p>
     <button onclick="start()">Start</button>
   </div>
 </section>
 
-<section class="fade"><h1>You & Me<br>2025</h1></section>
+<!-- SLIDE 2 — TITLE -->
+<section class="fade">
+  <h1>You & Me<br>2025</h1>
+  <p>
+    Started together.<br>
+    Learned distance.<br>
+    Stayed us.
+  </p>
+</section>
 
-<sec
+<!-- SLIDE 3 — BEFORE DISTANCE -->
+<section class="fade">
+  <p>
+    Before August,<br>
+    every day felt extra special.<br><br>
+    Not because we tried.<br>
+    But because it was with you.
+  </p>
+  <img src="photos/1.jpg" alt="Before distance">
+</section>
+
+<!-- SLIDE 4 — BAKERY IN MANALI -->
+<section class="fade">
+  <p>
+    Sitting in a bakery in Manali.<br>
+    No rush. No noise.<br>
+    Just us and time slowing down.
+  </p>
+  <img src="photos/14.jpg" alt="Bakery in Manali">
+</section>
+
+<!-- SLIDE 5 — SHINCHAN -->
+<section class="fade">
+  <p>
+    Watching Shinchan Movie together.<br>
+    Laughing at stupid scenes.<br><br>
+    Somehow, that meant everything.
+  </p>
+  <img src="photos/4.jpg" alt="Shinchan movie">
+</section>
+
+<!-- SLIDE 6 — OUR YEAR IN NUMBERS -->
+<section class="fade">
+  <p>
+    Together since: <b>30.11.2023</b><br>
+    Cities apart: <b>Delhi ⇄ Baddi</b><br>
+    Video calls: <b>Few, but priceless</b><br>
+    Laughs during calls: <b>Too many to hide</b><br>
+    Fights in 2025: <b>Yes</b><br>
+    Giving up on us: <b>Zero</b>
+  </p>
+</section>
+
+<!-- SLIDE 7 — AUGUST -->
+<section class="fade">
+  <p>
+    In August, distance entered.<br><br>
+    Not between us.<br>
+    But between our days.
+  </p>
+</section>
+
+<!-- SLIDE 8 — LONG DISTANCE -->
+<section class="fade">
+  <p>
+    Video calls where I talked<br>
+    and you replied on text.<br><br>
+    You laughing silently<br>
+    so your parents wouldn’t hear.<br><br>
+    Me trying harder<br>
+    just to see you smile.
+  </p>
+</section>
+
+<!-- SLIDE 9 — WHAT IT FELT LIKE -->
+<section class="fade">
+  <p>
+    Before August,<br>
+    my gallery was full.<br><br>
+    Random photos.<br>
+    Random bakchodi.<br><br>
+    After August,<br>
+    it was mostly empty.
+  </p>
+</section>
+
+<!-- SLIDE 10 — HARD MOMENT -->
+<section class="fade">
+  <p>
+    We had one fight.<br><br>
+    Grief on my side.<br>
+    Missing on yours.<br><br>
+    Miscommunication happened.<br><br>
+    But the next day,<br>
+    we chose to understand.<br><br>
+    And we grew.
+  </p>
+</section>
+
+<!-- SLIDE 11 — WHAT MADE IT WORK -->
+<section class="fade">
+  <p>
+    We didn’t complain.<br><br>
+    We respected each other’s careers.<br><br>
+    We stayed proud of each other.<br><br>
+    Distance didn’t weaken us.<br>
+    It taught us patience.
+  </p>
+</section>
+
+<!-- SLIDE 12 — DECEMBER REUNION -->
+<section class="fade">
+  <p>
+    December 21.<br>
+    Two days.<br>
+    Hectic. Tiring. Perfect.<br><br>
+    Even without nights together,<br>
+    it still felt like home.
+  </p>
+  <img src="photos/3.jpg" alt="December reunion">
+</section>
+
+<!-- SLIDE 13 — LESSON -->
+<section class="fade">
+  <p>
+    Distance taught me this:<br><br>
+    Love isn’t access.<br>
+    Love is effort.<br><br>
+    Showing up differently<br>
+    still counts as showing up.
+  </p>
+</section>
+
+<!-- SLIDE 14 — THANK YOU -->
+<section class="fade">
+  <p>
+    Thank you for trusting in us.<br><br>
+    For managing family, exams, life<br>
+    without letting us turn sour.<br><br>
+    For staying playful.<br>
+    For staying kind.<br><br>
+    For staying mine.
+  </p>
+</section>
+
+<!-- SLIDE 15 — FUTURE -->
+<section class="fade">
+  <p>
+    When you’re back in Delhi:<br><br>
+    Sandoz.<br>
+    Every food outlet we missed.<br>
+    Galaxy Pizza at night.<br><br>
+    Movies.<br>
+    Scary Moviesss.<br>
+    Gaming together.<br><br>
+    And no goodbyes this time.
+  </p>
+</section>
+
+<!-- SLIDE 16 — 2026 -->
+<section class="fade">
+  <p>
+    New year.<br>
+    Same us.<br><br>
+    New memories waiting.
+  </p>
+</section>
+
+<!-- SLIDE 17 — END -->
+<section class="fade">
+  <p>
+    I’d rewind it all.<br><br>
+    And still choose you.
+  </p>
+</section>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function start() {
+  const music = document.getElementById("music");
+  music.volume = 0.25;
+  music.play();
+  window.scrollBy(0, window.innerHeight);
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
